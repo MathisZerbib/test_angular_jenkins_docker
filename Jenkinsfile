@@ -22,5 +22,6 @@ pipeline {
   }
   environment {
     HOME = '.'
+    CHROME_BIN = 'google-chrome'
   }
 }
