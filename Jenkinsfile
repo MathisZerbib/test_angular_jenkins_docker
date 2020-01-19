@@ -15,7 +15,7 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'cd /server && npm run server'
+        sh 'ng serve'
       }
     }
 
