@@ -10,11 +10,16 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm install'
+      }
+    }
+
+    stage('Server') {
+      steps {
         sh 'npm run server'
       }
     }
 
-    stage('Run') {
+    stage('App') {
       steps {
         sh 'npm start'
       }
