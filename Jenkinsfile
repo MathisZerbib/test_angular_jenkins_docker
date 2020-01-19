@@ -13,6 +13,12 @@ pipeline {
       }
     }
 
+    stage('Test') {
+      steps {
+        sh 'cd /server && npm run server'
+      }
+    }
+
   }
   environment {
     HOME = '.'
