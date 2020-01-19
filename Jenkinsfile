@@ -17,7 +17,7 @@ pipeline {
       parallel {
         stage('Server') {
           steps {
-            sh 'npm run server'
+            sh 'cd /server && npm run server'
           }
         }
 
