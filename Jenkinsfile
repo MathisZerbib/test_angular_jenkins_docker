@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       args '-p 3000:3000'
-      image 'node:lts-alpine'
+      image 'node:alpine'
     }
 
   }
@@ -22,6 +22,6 @@ pipeline {
   }
   environment {
     HOME = '.'
-    CHROME_BIN = 'google-chrome'
+    CHROME_BIN = 'chromium-browser'
   }
 }
