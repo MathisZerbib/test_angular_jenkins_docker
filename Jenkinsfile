@@ -14,14 +14,19 @@ pipeline {
     }
 
     stage('Server') {
-      steps {
-        sh 'npm run server'
-      }
-    }
+      parallel {
+        stage('Server') {
+          steps {
+            sh 'npm run server'
+          }
+        }
 
-    stage('App') {
-      steps {
-        sh 'npm start'
+        stage('App') {
+          steps {
+            sh 'npm start'
+          }
+        }
+
       }
     }
 
