@@ -8,19 +8,8 @@ pipeline {
   }
   stages {
     stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            sh 'npm install'
-          }
-        }
-
-        stage('Test') {
-          steps {
-            sh 'npm run test'
-          }
-        }
-
+      steps {
+        sh 'npm install'
       }
     }
 
@@ -35,6 +24,12 @@ pipeline {
         stage('App') {
           steps {
             sh 'npm start'
+          }
+        }
+
+        stage('Test') {
+          steps {
+            sh 'npm run test'
           }
         }
 
